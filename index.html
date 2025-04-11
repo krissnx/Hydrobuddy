@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HydroBuddy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/setup.js"></script>
+    <script src="scripts/audio.js"></script>
+    <script src="scripts/reminder.js"></script>
+    <script src="scripts/gauge.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <body>
+        <img id="droppy" src="img/droppy-happy.png" height="100px">
+        <div class="content-container">
+            <div class="content-box">
+                <!-- Page content -->
+            </div>
+        </div>
+        <div class="options-icon-field">
+            <i class="fa-solid fa-gear"></i>
+        </div>
+        <div class="options-field hide">
+            <div>
+                <span>Start Hour</span>
+                <div class="start-hour-input">
+                    <!-- Dropdown for selecting the hour -->
+                    <select id="start-hour">
+                        <option value="0">00:00</option>
+                        <option value="1">01:00</option>
+                        <option value="2">02:00</option>
+                        <option value="3">03:00</option>
+                        <option value="4">04:00</option>
+                        <option value="5">05:00</option>
+                        <option value="6">06:00</option>
+                        <option value="7">07:00</option>
+                        <option selected value="8">08:00</option>
+                        <option value="9">09:00</option>
+                        <option value="10">10:00</option>
+                        <option value="11">11:00</option>
+                        <option value="12">12:00</option>
+                        <option value="13">13:00</option>
+                        <option value="14">14:00</option>
+                        <option value="15">15:00</option>
+                        <option value="16">16:00</option>
+                        <option value="17">17:00</option>
+                        <option value="18">18:00</option>
+                        <option value="19">19:00</option>
+                        <option value="20">20:00</option>
+                        <option value="21">21:00</option>
+                        <option value="22">22:00</option>
+                        <option value="23">23:00</option>
+                    </select>
+                </div>
+            </div>
+        
+            <div>
+                <span>Background color</span>
+                <div class="colors-option">
+                    <div class="color selected" id="cyanpink"></div>  <!-- #FFAED7, #E9D1DE, #DBE5E5, #C5FFFE -->  
+                    <div class="color" id="salmonblue"></div>  <!-- #FF9B9A, #E3C1C2, #BFD4E5, #A3C6DD -->  
+                    <div class="color" id="mintlavender"></div>  <!-- #B2F7EF, #D6C7FF, #E8DFFF, #A0E4CB -->  
+                    <div class="color" id="peachseafoam"></div>  <!-- #FFCBA4, #F7E7CE, #C3FBD8, #A2E1DB -->  
+                    <div class="color" id="twilightblue"></div>  <!-- #A7C7E7, #8FA7C4, #6D90C2, #4E7496 -->  
+                    <div class="color" id="sunlitcoral"></div>  <!-- #FFB69F, #FFD1BA, #FFEAD4, #F4C2C2 --> 
+                </div>
+            </div>
+        </div>        
+        <div class="modal fade" id="water-reminder-modal" tabindex="-1" aria-labelledby="water-reminder-label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h5 class="modal-title" id="water-reminder-label">Hydration Reminder 💧</h5>
+                        <span>Time to drink water! Stay hydrated. 💙</span>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Got it!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="end-game-modal" tabindex="-1" role="dialog" aria-labelledby="end-game-label" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <p>Go back to the main title screen ?</p>
+                  <div class="modal-buttons">
+                    <button type="button" class="btn btn-primary confirm">Yes</button>
+                    <button type="button" class="btn btn-secondary cancel" data-dismiss="modal">No</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </body>
+</html>

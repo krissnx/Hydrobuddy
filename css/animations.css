@@ -1,0 +1,76 @@
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes bubbleEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes wobble {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    25% { transform: translate(-50%, -50%) rotate(2deg); }
+    50% { transform: translate(-50%, -50%) rotate(-2deg); }
+    75% { transform: translate(-50%, -50%) rotate(2deg); }
+    100% { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes growButton {
+    0% {
+        transform: scale(1); /* Initial size */
+    }
+    100% {
+        transform: scale(1.1); /* Grown size */
+    }
+}
+
+@keyframes disappearPop {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    30% {
+        transform: scale(1.2); /* Pops bigger */
+    }
+    60% {
+        transform: scale(0.8); /* Shrinks smaller */
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0); /* Start small */
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05); /* Slightly overshoot */
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1); /* Return to normal size */
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); } /* Scale up */
+    100% { transform: scale(1); } /* Back to normal */
+}
+
+@keyframes float {
+    0%, 100% {
+      transform: translateY(0); /* Default position */
+    }
+    50% {
+      transform: translateY(-10px); /* Move up slightly */
+    }
+}
