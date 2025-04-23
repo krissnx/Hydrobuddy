@@ -23,56 +23,63 @@
                 <!-- Page content -->
             </div>
         </div>
-        <div class="options-icon-field">
+        <div class="help-icon-field">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="options-icon-field" data-toggle="modal" data-target="#options-modal">
             <i class="fa-solid fa-gear"></i>
         </div>
-        <div class="options-field hide">
-            <div>
-                <span>Start Hour</span>
-                <div class="start-hour-input">
-                    <!-- Dropdown for selecting the hour -->
-                    <select id="start-hour">
-                        <option value="0">00:00</option>
-                        <option value="1">01:00</option>
-                        <option value="2">02:00</option>
-                        <option value="3">03:00</option>
-                        <option value="4">04:00</option>
-                        <option value="5">05:00</option>
-                        <option value="6">06:00</option>
-                        <option value="7">07:00</option>
-                        <option selected value="8">08:00</option>
-                        <option value="9">09:00</option>
-                        <option value="10">10:00</option>
-                        <option value="11">11:00</option>
-                        <option value="12">12:00</option>
-                        <option value="13">13:00</option>
-                        <option value="14">14:00</option>
-                        <option value="15">15:00</option>
-                        <option value="16">16:00</option>
-                        <option value="17">17:00</option>
-                        <option value="18">18:00</option>
-                        <option value="19">19:00</option>
-                        <option value="20">20:00</option>
-                        <option value="21">21:00</option>
-                        <option value="22">22:00</option>
-                        <option value="23">23:00</option>
-                    </select>
+        <div class="modal fade" id="options-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="form-group start-hour-selection">
+                            <label for="start-hour">Start Hour</label>
+                            <i class="fa-solid fa-caret-down"></i>
+                            <select class="form-control" id="start-hour">
+                                <option value="0">12AM</option>
+                                <option value="1">1AM</option>
+                                <option value="2">2AM</option>
+                                <option value="3">3AM</option>
+                                <option value="4">4AM</option>
+                                <option value="5">5AM</option>
+                                <option value="6">6AM</option>
+                                <option value="7">7AM</option>
+                                <option selected value="8">8AM</option>
+                                <option value="9">9AM</option>
+                                <option value="10">10AM</option>
+                                <option value="11">11AM</option>
+                                <option value="12">12PM</option>
+                                <option value="13">1PM</option>
+                                <option value="14">2PM</option>
+                                <option value="15">3PM</option>
+                                <option value="16">4PM</option>
+                                <option value="17">5PM</option>
+                                <option value="18">6PM</option>
+                                <option value="19">7PM</option>
+                                <option value="20">8PM</option>
+                                <option value="21">9PM</option>
+                                <option value="22">10PM</option>
+                                <option value="23">11PM</option>
+                                </select>
+                            </div>
+                    
+                            <div class="form-group">
+                                <label>Background Color</label>
+                                <div class="colors-option d-flex flex-wrap gap-2">
+                                <div class="color selected" id="cyanpink"></div>
+                                <div class="color" id="salmonblue"></div>
+                                <div class="color" id="mintlavender"></div>
+                                <div class="color" id="peachseafoam"></div>
+                                <div class="color" id="twilightblue"></div>
+                                <div class="color" id="sunlitcoral"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        
-            <div>
-                <span>Background color</span>
-                <div class="colors-option">
-                    <div class="color selected" id="cyanpink"></div>  <!-- #FFAED7, #E9D1DE, #DBE5E5, #C5FFFE -->  
-                    <div class="color" id="salmonblue"></div>  <!-- #FF9B9A, #E3C1C2, #BFD4E5, #A3C6DD -->  
-                    <div class="color" id="mintlavender"></div>  <!-- #B2F7EF, #D6C7FF, #E8DFFF, #A0E4CB -->  
-                    <div class="color" id="peachseafoam"></div>  <!-- #FFCBA4, #F7E7CE, #C3FBD8, #A2E1DB -->  
-                    <div class="color" id="twilightblue"></div>  <!-- #A7C7E7, #8FA7C4, #6D90C2, #4E7496 -->  
-                    <div class="color" id="sunlitcoral"></div>  <!-- #FFB69F, #FFD1BA, #FFEAD4, #F4C2C2 --> 
-                </div>
-            </div>
-        </div>        
-        <div class="modal fade" id="water-reminder-modal" tabindex="-1" aria-labelledby="water-reminder-label" aria-hidden="true">
+            </div>                  
+        <div class="modal fade" id="water-reminder-modal" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -83,18 +90,53 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="end-game-modal" tabindex="-1" role="dialog" aria-labelledby="end-game-label" aria-hidden="true">
+        <div class="modal fade" id="end-game-modal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <p>Go back to the main title screen ?</p>
-                  <div class="modal-buttons">
-                    <button type="button" class="btn btn-primary confirm">Yes</button>
-                    <button type="button" class="btn btn-secondary cancel" data-dismiss="modal">No</button>
-                  </div>
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p>Go back to the main title screen ?</p>
+                        <div class="modal-buttons">
+                            <button type="button" class="btn btn-primary confirm">Yes</button>
+                            <button type="button" class="btn btn-secondary cancel" data-dismiss="modal">No</button>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+        <div class="modal fade" id="help-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="help-modal-title">
+                            <span>Welcome to Hydrobuddy !</span>
+                            <img id="droppy" src="img/droppy-excited.png" height="50px">
+                        </div>
+                        <div class="help-modal-details">
+                            <span>Hey there, thirsty friend !<br>
+                                I'm Droppy, your trusty water buddy here to help you stay hydrated and happy !<br>
+                                You've got one simple mission: <b>drink water like a hydration hero !</b><br> But don't worry, I'm with you every drop of the way !
+                            </span>
+                            <div class="help-modal-subtitle">
+                                <span>How it works ?</span>
+                                <img id="droppy" src="img/droppy-surprised.png" height="50px">
+                            </div>
+                            <span>
+                                Every hour, I'll remind you to drink a little bit of water !<br>
+                                It's like a game but for your body !<br> 
+                                The more you drink, the more progress you make. Stick with it, and you'll hit your goal by the end of the day.<br>
+                                <div class="help-infos">
+                                    <div class="circle"></div><span>Tap the circles to track how much water you've already gulped down !</span>
+                                </div>
+                                <div class="help-infos">
+                                    <i class="fa-solid fa-play expected-level"></i><span>This trusty cursor points to your water goal for the current hour. Drink up and keep the streak alive !</span>
+                                </div>
+                                Don't forget, your body LOVES water, and so do I !<br>
+                                Stay hydrated, stay awesome, and let's crush those water goals together !
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

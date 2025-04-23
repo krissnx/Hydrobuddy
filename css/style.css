@@ -279,6 +279,20 @@ body {
 
     }
 
+    .help-icon-field {
+        position: absolute;
+        top: 5px;
+        right: 45px;
+        font-size: 25px;
+        color: white;
+        transition: font-size 0.5s ease;
+
+        &:hover {
+            cursor: pointer;
+            font-size: 26px;
+        }
+    }
+
     .options-icon-field {
         position: absolute;
         top: 5px;
@@ -289,72 +303,97 @@ body {
 
         &:hover {
             cursor: pointer;
-            font-size: 30px;
+            font-size: 26px;
         }
     }
 
-    .options-field {
-        position: absolute;
-        top: 30px;
-        right: 45px;
-        display: flex;
-        padding: 20px;
-        border-radius: 6px;
-        width: 300px;
-        height: 200px;
-        box-shadow: 2px 2px 10px lightgray;
-        font-family: Bubblegum Sans, 'cursive';
-        color: white;
-        backdrop-filter: blur(10px);
-        background: rgba(190, 190, 190, 0.3);
-        flex-direction: column;
-        justify-content: space-evenly;
+    #options-modal {
+        .modal-dialog {
+            top: 150px;
 
-        &.hide {
-            display: none;
-        }
+            .modal-content {
+                border: none;
 
-        .colors-option {
-            display: flex;
-            align-items: center;
-            margin: 5px 0 0 0;
+                .modal-body {
+                    padding: 20px;
+                    border-radius: 6px;
+                    font-family: Bubblegum Sans, 'cursive';
 
-            .color {
-                width: 30px;
-                height: 30px;
-                border-radius: 6px;
-                box-shadow: 2px 2px 10px lightgray;
-                margin-right: 10px;
-                cursor: pointer;
-                
-                &.selected {
-                    border: 3px solid white;
-                }
+                    .form-group {
+                        margin-bottom: 20px;
+                    }
 
-                &#cyanpink {
-                    background: linear-gradient(270deg, #FFAED7, #E9D1DE, #DBE5E5, #C5FFFE);
+                    .start-hour-selection {
+                        display: flex;
+                        align-items: center;
+                        
+                        label {
+                            margin-right: 20px;
+                        }
+
+                        #start-hour {
+                            cursor: pointer;
+                            background: transparent;
+                            z-index: 2;
+                        }
+
+                        .fa-caret-down {
+                            position: absolute;
+                            left: 160px;
+                            cursor: pointer;
+                            z-index: 1;
+                        }
+                    }
+
+                    .form-control {
+                        width: 80px;
+
+                    }
+
+                    .colors-option {
+                        display: flex;
+                        align-items: center;
+                        margin: 5px 0 0 0;
+
+                        .color {
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 6px;
+                            box-shadow: 2px 2px 10px lightgray;
+                            margin-right: 10px;
+                            cursor: pointer;
+                            
+                            &.selected {
+                                border: 3px solid white;
+                            }
+
+                            &#cyanpink {
+                                background: linear-gradient(270deg, #FFAED7, #E9D1DE, #DBE5E5, #C5FFFE);
+                            }
+                            
+                            &#salmonblue {
+                                background: linear-gradient(270deg, #FF9B9A, #E3C1C2, #BFD4E5, #A3C6DD);
+                            }
+                            
+                            &#mintlavender {
+                                background: linear-gradient(270deg, #B2F7EF, #D6C7FF, #E8DFFF, #A0E4CB);
+                            }
+                            
+                            &#peachseafoam {
+                                background: linear-gradient(270deg, #FFCBA4, #F7E7CE, #C3FBD8, #A2E1DB);
+                            }
+                            
+                            &#twilightblue {
+                                background: linear-gradient(270deg, #A7C7E7, #8FA7C4, #6D90C2, #4E7496);
+                            }
+                            
+                            &#sunlitcoral {
+                                background: linear-gradient(270deg, #FFB69F, #FFD1BA, #FFEAD4, #F4C2C2); 
+                            }
+                            
+                        }
+                    }
                 }
-                
-                &#salmonblue {
-                    background: linear-gradient(270deg, #FF9B9A, #E3C1C2, #BFD4E5, #A3C6DD);
-                }
-                
-                &#mintlavender {
-                    background: linear-gradient(270deg, #B2F7EF, #D6C7FF, #E8DFFF, #A0E4CB);
-                }
-                
-                &#peachseafoam {
-                    background: linear-gradient(270deg, #FFCBA4, #F7E7CE, #C3FBD8, #A2E1DB);
-                }
-                
-                &#twilightblue {
-                    background: linear-gradient(270deg, #A7C7E7, #8FA7C4, #6D90C2, #4E7496);
-                }
-                
-                &#sunlitcoral {
-                    background: linear-gradient(270deg, #FFB69F, #FFD1BA, #FFEAD4, #F4C2C2); 
-                }
-                
             }
         }
     }
@@ -431,4 +470,62 @@ body {
             }
         }
     }
+
+    #help-modal {
+        .modal-dialog {
+            max-width: 600px;
+        }
+    
+        .help-modal-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+    
+            span {
+                margin-right: 20px;
+            }
+        }
+    
+        .help-modal-subtitle {
+            display: flex;
+            align-items: center;
+            font-size: 25px;
+            font-weight: 500;
+            margin: 5px 0;
+    
+            span {
+                margin-right: 20px;
+            }
+        }
+    
+        .help-infos {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+    
+        .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #4AB0E5;
+            margin-right: 5px;
+        }
+    
+        .expected-level {
+            color: #4AB0E5;
+            font-size: 25px;
+            margin-right: 5px;
+        }
+    
+        #droppy {
+            animation: unset;
+            position: static;
+            top: unset;
+            left: unset;
+        }
+    }    
 }
